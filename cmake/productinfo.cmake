@@ -1,0 +1,16 @@
+if(MSVC)
+    string(TIMESTAMP CURRENT_DATE "%Y/%m/%d")
+    string(TIMESTAMP CURRENT_TIME "%H:%M:%S")
+    set(COMPANY_NAME    "company name")
+    set(PRODUCT_NAME    "my product name")
+    set(LegalCopyRight  "Copyright(C) ${CURRENT_DATE}")
+    set(VERSION_MAJOR    1)
+    set(VERSION_MINOR    0)
+    set(VERSION_PATCH    0)
+    set(VERSION_REVISION 1)
+    set(MY_VERSIONINFO_RC "${CMAKE_BINARY_DIR}/VersionInfo.rc")
+    message("++++++++   CMAKE_SOURCE_DIR is:    " ${CMAKE_SOURCE_DIR})
+    configure_file("${CMAKE_SOURCE_DIR}/cmake/VersionInfo.rc.in"
+                   "${MY_VERSIONINFO_RC}")
+endif(MSVC)
+# ${MY_VERSIONINFO_RC}  add_library / add_executable 需要添加此路径，版本信息才能生成
