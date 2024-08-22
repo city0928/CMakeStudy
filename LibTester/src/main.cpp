@@ -1,16 +1,14 @@
-#include "QtWidgetClass.h" 
 #include <QtWidgets/QApplication>
 
 #include "Button/CustomButton.h"
 
-
-int main(int argc, char *argv[]) 
+int main(int argc, char *argv[])
 {
-	QApplication a(argc, argv);
-	QtWidgetClass w;
-	w.show();
+    QApplication a(argc, argv);
 
-	CustomButton waw(900);
-	waw.show();
-	return a.exec();
+    CustomButton ww(900);
+    ww.buttonOperation();
+    ww.show();
+
+    return a.exec();
 }
